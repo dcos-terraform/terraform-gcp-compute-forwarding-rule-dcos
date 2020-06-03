@@ -4,7 +4,7 @@ variable "cluster_name" {
 
 variable "public_agents_self_link" {
   description = "List of public agent instances self links"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
@@ -15,7 +15,7 @@ variable "public_agents_additional_rules" {
 
 variable "masters_self_link" {
   description = "List of master instances self links"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
@@ -26,7 +26,7 @@ variable "masters_additional_rules" {
 
 variable "labels" {
   description = "Add custom labels to all resources"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
@@ -44,3 +44,4 @@ variable "disable_public_agents" {
   description = "[PUBLIC AGENTS] Do not create load balancer and its resources"
   default     = false
 }
+
